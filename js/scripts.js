@@ -64,7 +64,6 @@ const tomarDatosCertificado=()=>{
   const textoPrincipal= document.getElementById("textoPrincipal")
   textoPrincipal.innerHTML=`Por la presente certifico que <b>${nombre.toUpperCase()}</b>, DNI ${dni} recibió la confirmación en esta parroquia, Nuestra Señora de los Ángeles, el día <b> ${fecha.getDate()} de ${meses[fecha.getMonth()]} de ${fecha.getFullYear()}</b> 
   según consta en el libro n°${libro}, página ${pagina}`
-  alert("Imprimir Certificado")
-  //imprimirCert(nombre)
+ imprimirCert(nombre)
   
 }
