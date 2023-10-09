@@ -17,8 +17,8 @@ function mostrarFormulario(tipo) {
            '<input type="number" id="dni" class="swal2-input" placeholder="DNI">' +
            '<input type= "date" id="fecha" class="swal2-input" placeholder="Fecha">' +
            '<input id="padrinos" class="swal2-input" placeholder="Nombre Padrinos">' +
-           '<input type="number" min=1 id="nroLibro" class="swal2-input" placeholder="Número de Libro">' +
-           '<input id="nroFolio" class="swal2-input" placeholder="Número de Folio">',
+           '<input type="number" min=1 id="nroLibro" class="swal2-input" placeholder="Número de Libro"> <br>' +
+           '<input type="number" id="nroFolio" class="swal2-input" placeholder="Número de Folio">',
        focusConfirm: false,
        preConfirm: () => {
            const nombre = Swal.getPopup().querySelector('#nombre').value;
