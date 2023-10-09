@@ -56,14 +56,20 @@ const tomarDatosCertificado=()=>{
         "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
     ];
   const url = new URL(window.location.href);
+  let tipo= url.searchParams.get("tipo");
+alert(tipo)
   let nombre = url.searchParams.get("nombre");
   let dni = url.searchParams.get("dni");
   let fecha = new Date(url.searchParams.get("fecha"))
   let libro = url.searchParams.get("libro");
-  let pagina = url.searchParams.get("pagina");
+  let folio = url.searchParams.get("folio");
+  let padrinos = url.searchParams.get("padrinos");
   const textoPrincipal= document.getElementById("textoPrincipal")
+  const titulo= document.getElementById("titulo")
   textoPrincipal.innerHTML=`Por la presente certifico que <b>${nombre.toUpperCase()}</b>, DNI ${dni} recibió la confirmación en esta parroquia, Nuestra Señora de los Ángeles, el día <b> ${fecha.getDate()} de ${meses[fecha.getMonth()]} de ${fecha.getFullYear()}</b> 
-  según consta en el libro n°${libro}, página ${pagina}`
+ , sus padrinos son: ${padrinos}.<br>Según consta en el libro n°: ${libro}, folio: ${folio}`
  imprimirCert(nombre)
+ titulo.textContent=`CERTIFICADO DE ${tipo.toLocaleUpperCase()}`
+ alert (titulo.textContent)
   
 }
