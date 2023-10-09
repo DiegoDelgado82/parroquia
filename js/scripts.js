@@ -57,7 +57,7 @@ const tomarDatosCertificado=()=>{
     ];
   const url = new URL(window.location.href);
   let tipo= url.searchParams.get("tipo");
-alert(tipo)
+
   let nombre = url.searchParams.get("nombre");
   let dni = url.searchParams.get("dni");
   let fecha = new Date(url.searchParams.get("fecha"))
@@ -70,6 +70,6 @@ alert(tipo)
  , sus padrinos son: ${padrinos}.<br>Según consta en el libro n°: ${libro}, folio: ${folio}`
  imprimirCert(nombre)
  titulo.textContent=`CERTIFICADO DE ${tipo.toLocaleUpperCase()}`
- alert (titulo.textContent)
+ 
   
 }
