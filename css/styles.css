@@ -1,20 +1,22 @@
 #container {
-   
     text-align: center;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    
     align-items: center;
 }
 
 h1 {
-    color:black;
+    color: black;
     font-size: 36px;
 }
-#downloadButton
-{
+
+#downloadButton {
     position: absolute;
-    top:85%;
+    top: 85%;
     right: 10%;
+}
+
+#signature p {
+    margin-left: auto;
 }

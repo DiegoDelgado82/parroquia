@@ -51,13 +51,17 @@ const imprimirCert =(nombre)=>
 
 
 const tomarDatosCertificado=()=>{
+    const hoy= new Date()
     const meses = [
         "enero", "febrero", "marzo", "abril", "mayo", "junio",
         "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
     ];
+
+  const fechaCertificado= document.getElementById("fechaCertificado")
+
   const url = new URL(window.location.href);
   let tipo= url.searchParams.get("tipo");
-
+  let articulo
   let nombre = url.searchParams.get("nombre");
   let dni = url.searchParams.get("dni");
   let fecha = new Date(url.searchParams.get("fecha"))
@@ -65,6 +69,7 @@ const tomarDatosCertificado=()=>{
   let folio = url.searchParams.get("folio");
   let padrinos = url.searchParams.get("padrinos");
   const textoPrincipal= document.getElementById("textoPrincipal")
+  fechaCertificado.innerHTML=`Córdoba, ${hoy.getDate()} de ${meses[hoy.getMonth()]} de ${hoy.getFullYear()}` 
   const titulo= document.getElementById("titulo")
   textoPrincipal.innerHTML=`Por la presente certifico que <b>${nombre.toUpperCase()}</b>, DNI ${dni} recibió el sacramento de ${tipo} en esta parroquia, Nuestra Señora de los Ángeles, el día <b> ${fecha.getDate()} de ${meses[fecha.getMonth()]} de ${fecha.getFullYear()}</b> 
  , sus padrinos son: ${padrinos}.<br>Según consta en el libro n°: ${libro}, folio: ${folio}`

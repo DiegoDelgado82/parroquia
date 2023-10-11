@@ -13,11 +13,16 @@ function mostrarFormulario(tipo) {
    Swal.fire({
        title: 'Complete los siguientes campos:',
        html:
+           '<br><label for="nombre">Nombre a quien va dirigido el certificado</label>' +
            '<input id="nombre" class="swal2-input" placeholder="Nombre">' +
            '<input type="number" id="dni" class="swal2-input" placeholder="DNI">' +
+           '<br><label for="fecha">Fecha de recibido el sacramento</label>' +
            '<input type= "date" id="fecha" class="swal2-input" placeholder="Fecha">' +
+           '<br><label for="padrinos">Nombre de los padrinos (separados por "y")</label>' +
            '<input id="padrinos" class="swal2-input" placeholder="Nombre Padrinos">' +
+           '<label for="nroLibro">N° Libro:&nbsp </label>' +
            '<input type="number" min=1 id="nroLibro" class="swal2-input" placeholder="Número de Libro"> <br>' +
+           '<label for="nroFolio">N° de folio:&nbsp </label>' +
            '<input type="number" id="nroFolio" class="swal2-input" placeholder="Número de Folio">',
        focusConfirm: false,
        preConfirm: () => {
