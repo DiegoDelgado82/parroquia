@@ -18,10 +18,12 @@ function mostrarFormulario(tipo) {
            '<input type="number" id="dni" class="swal2-input" placeholder="DNI">' +
            '<br><label for="fecha">Fecha de recibido el sacramento</label>' +
            '<input type= "date" id="fecha" class="swal2-input" placeholder="Fecha">' +
+           '<br><label for="padres">Nombre de los padres (separados por "y")</label>' +
+           '<input id="padres" class="swal2-input" placeholder="Nombre Padres">' +
            '<br><label for="padrinos">Nombre de los padrinos (separados por "y")</label>' +
            '<input id="padrinos" class="swal2-input" placeholder="Nombre Padrinos">' +
            '<label for="nroLibro">N° Libro:&nbsp </label>' +
-           '<input type="number" min=1 id="nroLibro" class="swal2-input" placeholder="Número de Libro"> <br>' +
+           '<input id="nroLibro" class="swal2-input" placeholder="Número de Libro"> <br>' +
            '<label for="nroFolio">N° de folio:&nbsp </label>' +
            '<input type="number" id="nroFolio" class="swal2-input" placeholder="Número de Folio">',
        focusConfirm: false,
@@ -29,6 +31,7 @@ function mostrarFormulario(tipo) {
            const nombre = Swal.getPopup().querySelector('#nombre').value;
            const dni = Swal.getPopup().querySelector('#dni').value;
            const fecha = Swal.getPopup().querySelector('#fecha').value;
+           const padres = Swal.getPopup().querySelector('#padres').value;
            const padrinos = Swal.getPopup().querySelector('#padrinos').value;
            const nroLibro = Swal.getPopup().querySelector('#nroLibro').value;
            const nroFolio = Swal.getPopup().querySelector('#nroFolio').value;
@@ -40,7 +43,7 @@ function mostrarFormulario(tipo) {
            console.log('Nombre de Padrinos: ', padrinos);
            console.log('Número de Libro:', nroLibro);
            console.log('Número de Folio:', nroFolio);
-           window.location.href = `./pages/certificado.html?nombre=${nombre}&dni=${dni}&fecha=${fecha}&libro=${nroLibro}&folio=${nroFolio}&padrinos=${padrinos}&tipo=${tipo}`
+           window.location.href = `./pages/certificado.html?nombre=${nombre}&dni=${dni}&fecha=${fecha}&libro=${nroLibro}&folio=${nroFolio}&padrinos=${padrinos}&tipo=${tipo}&padres=${padres}`
        }
    });
 }

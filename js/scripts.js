@@ -68,11 +68,12 @@ const tomarDatosCertificado=()=>{
   let libro = url.searchParams.get("libro");
   let folio = url.searchParams.get("folio");
   let padrinos = url.searchParams.get("padrinos");
+  let padres = url.searchParams.get("padres");
   const textoPrincipal= document.getElementById("textoPrincipal")
   fechaCertificado.innerHTML=`Córdoba, ${hoy.getDate()} de ${meses[hoy.getMonth()]} de ${hoy.getFullYear()}` 
   const titulo= document.getElementById("titulo")
   textoPrincipal.innerHTML=`Por la presente certifico que <b>${nombre.toUpperCase()}</b>, DNI ${dni} recibió el sacramento de ${tipo} en esta parroquia, Nuestra Señora de los Ángeles, el día <b> ${fecha.getDate()} de ${meses[fecha.getMonth()]} de ${fecha.getFullYear()}</b> 
- , sus padrinos son: ${padrinos}.<br>Según consta en el libro n°: ${libro}, folio: ${folio}`
+ , sus padres son: ${padres}. Sus padrinos son: ${padrinos}.<br>Según consta en el libro n° ${libro}, folio ${folio}`
  titulo.innerHTML=titulo.innerHTML +tipo.toLocaleUpperCase()
  imprimirCert(nombre)
  
