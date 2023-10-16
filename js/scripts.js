@@ -102,10 +102,7 @@ const tomarDatosCertificadoAbreviado = () => {
 
   const url = new URL(window.location.href);
   let tipo = url.searchParams.get("tipo");
-  let articulo;
   let nombre = url.searchParams.get("nombre");
-  let dni = url.searchParams.get("dni");
-  let fecha = new Date(url.searchParams.get("fecha"));
   let libro = url.searchParams.get("libro");
   let folio = url.searchParams.get("folio");
   const textoPrincipal = document.getElementById("textoPrincipal");
@@ -113,9 +110,7 @@ const tomarDatosCertificadoAbreviado = () => {
     meses[hoy.getMonth()]
   } de ${hoy.getFullYear()}`;
   const titulo = document.getElementById("titulo");
-  textoPrincipal.innerHTML = `Por la presente certifico que <b>${nombre.toUpperCase()}</b>, DNI ${dni} recibió el sacramento del ${tipo} en esta parroquia, Nuestra Señora de los Ángeles, el día <b> ${fecha.getDate()} de ${
-    meses[fecha.getMonth()]
-  } de ${fecha.getFullYear()}</b> 
+  textoPrincipal.innerHTML = `Por la presente certifico que <b>${nombre.toUpperCase()}</b>, recibió el sacramento del ${tipo} en esta parroquia, Nuestra Señora de los Ángeles, </b> 
   <br>Según consta en el libro n° ${libro}, folio ${folio}`;
   titulo.innerHTML = titulo.innerHTML+" " + tipo.toLocaleUpperCase();
   imprimirCert(nombre);

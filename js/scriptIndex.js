@@ -54,9 +54,6 @@ function mostrarFormularioAbreviado(tipo) {
     html:
       '<br><label for="nombre">Nombre a quien va dirigido el certificado</label>' +
       '<input id="nombre" class="swal2-input" placeholder="Nombre">' +
-      '<input type="number" id="dni" class="swal2-input" placeholder="DNI">' +
-      '<br><label for="fecha">Fecha de recibido el sacramento</label>' +
-      '<input type= "date" id="fecha" class="swal2-input" placeholder="Fecha">' +
       '<label for="nroLibro">N° Libro:&nbsp </label>' +
       '<input id="nroLibro" class="swal2-input" placeholder="Número de Libro"> <br>' +
       '<label for="nroFolio">N° de folio:&nbsp </label>' +
@@ -64,11 +61,9 @@ function mostrarFormularioAbreviado(tipo) {
     focusConfirm: false,
     preConfirm: () => {
       const nombre = Swal.getPopup().querySelector("#nombre").value;
-      const dni = Swal.getPopup().querySelector("#dni").value;
-      const fecha = Swal.getPopup().querySelector("#fecha").value;
       const nroLibro = Swal.getPopup().querySelector("#nroLibro").value;
       const nroFolio = Swal.getPopup().querySelector("#nroFolio").value;
-      window.location.href = `./pages/certificadoAbreviado.html?nombre=${nombre}&dni=${dni}&fecha=${fecha}&libro=${nroLibro}&folio=${nroFolio}&tipo=${tipo}`;
+      window.location.href = `./pages/certificadoAbreviado.html?nombre=${nombre}&libro=${nroLibro}&folio=${nroFolio}&tipo=${tipo}`;
     },
   });
 }
