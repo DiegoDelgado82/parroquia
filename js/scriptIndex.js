@@ -67,3 +67,27 @@ function mostrarFormularioAbreviado(tipo) {
     },
   });
 }
+
+const enviarConstancia = () =>
+{
+  Swal.fire({
+    title: "Coloque el número de teléfono y nombre a quien quiere enviarle la constancia:",
+    html:
+     '<label for="nroTelefono">N° de teléfono:&nbsp </label>' +
+      '<input type="number" id="nroFolio" class="swal2-input" placeholder="Número de teléfono">'+
+      '<br><label for="nombre">Nombre a quien va dirigido el certificado</label>' +
+      '<input id="nombre" class="swal2-input" placeholder="Nombre">',
+    focusConfirm: false,
+    preConfirm: () => {
+      const nombre = Swal.getPopup().querySelector("#nombre").value;
+      const nroTelefono = Swal.getPopup().querySelector("#nroTelefono").value;
+      let mensaje =`Hola ${nombre}, te envío el certificado que solicitaste` ;
+      window.open(`https://wa.me/${nroTelefono}?text=${encodeURIComponent(
+        mensaje)}`);
+      alert(mensaje)
+      
+    },
+  });
+  
+  
+}
